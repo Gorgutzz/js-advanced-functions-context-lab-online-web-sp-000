@@ -46,9 +46,9 @@ function createTimeInEvent(dateStamp) {
   return this;
 }
 
-function createTimeOutEvent(empRecord, dateStamp) {
+function createTimeOutEvent(dateStamp) {
   let date = dateStamp.split(' ');
-  empRecord.timeOutEvents.push({
+  this.timeOutEvents.push({
     type: 'TimeOut',
     hour: parseInt(date[1]),
     date: date[0]
