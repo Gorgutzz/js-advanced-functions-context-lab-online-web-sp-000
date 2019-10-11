@@ -53,7 +53,7 @@ function createTimeOutEvent(dateStamp) {
     hour: parseInt(date[1]),
     date: date[0]
   });
-  return empRecord;
+  return this;
 }
 
 function hoursWorkedOnDate(empRecord, date) {
