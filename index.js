@@ -56,15 +56,15 @@ function createTimeOutEvent(dateStamp) {
   return this;
 }
 
-function hoursWorkedOnDate(empRecord, date) {
-  let timeIn = empRecord.timeInEvents.find(timeEvent => timeEvent.date === date);
-  let timeOut = empRecord.timeOutEvents.find(timeEvent => timeEvent.date === date);
+function hoursWorkedOnDate(date) {
+  let timeIn = this.timeInEvents.find(timeEvent => timeEvent.date === date);
+  let timeOut = this.timeOutEvents.find(timeEvent => timeEvent.date === date);
   return (timeOut.hour - timeIn.hour)/100;
 }
 
-function wagesEarnedOnDate(empRecord, date) {
-  const hoursWorked = hoursWorkedOnDate(empRecord, date);
-  return hoursWorked * empRecord.payPerHour;
+function wagesEarnedOnDate(date) {
+  const hoursWorked = hoursWorkedOnDate(this, date);
+  return hoursWorked * this.payPerHour;
 }
 
 function allWagesFor(empRecord) {
