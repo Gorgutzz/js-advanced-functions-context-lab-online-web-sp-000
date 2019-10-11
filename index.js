@@ -36,14 +36,14 @@ function createEmployeeRecords(recordsArray) {
   return recordsArray.map(employeeArray => createEmployeeRecord(employeeArray))
 }
 
-function createTimeInEvent(empRecord, dateStamp) {
+function createTimeInEvent(dateStamp) {
   let date = dateStamp.split(' ');
-  empRecord.timeInEvents.push({
+  this.timeInEvents.push({
     type: 'TimeIn',
     hour: parseInt(date[1]),
     date: date[0]
   });
-  return empRecord;
+  return this;
 }
 
 function createTimeOutEvent(empRecord, dateStamp) {
